@@ -1,3 +1,8 @@
+Ubuntu, PlayOnLinux
+
+Foi utilizado Wine 9.0-rc5 32 Bits
+___
+
 Instalar usando Wine 32 Bits.
 
 Atalhos para Arquivos de programas:
