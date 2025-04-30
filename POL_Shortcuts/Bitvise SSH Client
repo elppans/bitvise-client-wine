@@ -2,6 +2,7 @@
 [ "$PLAYONLINUX" = "" ] && exit 0
 source "$PLAYONLINUX/lib/sources"
 export WINEPREFIX="/home/suporte4/.var/app/com.playonlinux.PlayOnLinux4/data/PlayOnLinux//wineprefix/bitvise"
-export WINEDEBUG="-all"
+export WINEDEBUG=""
+export SSH_AUTH_SOCK=""
 cd "/home/suporte4/.var/app/com.playonlinux.PlayOnLinux4/data/PlayOnLinux//wineprefix/bitvise/drive_c/./Program Files/Bitvise SSH Client"
 POL_Wine "BvSsh.exe"  "$@"
