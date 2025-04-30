@@ -1,0 +1,15 @@
+Instalar usando Wine 32 Bits.
+
+Atalhos para Arquivos de programas:
+
+Bitvise SSH Client:
+"C:\Program Files (x86)\Bitvise SSH Client\BvSsh.exe"
+
+Bitvise Client Key Manager:
+"C:\Program Files (x86)\Bitvise SSH Client\BvSsh.exe" -glclstgs=Keypairs
+
+Bitvise Host Key Manager:
+"C:\Program Files (x86)\Bitvise SSH Client\BvSsh.exe" -glclstgs=Hostkeys
+
+Bitvise Proxy Settings:
+"C:\Program Files (x86)\Bitvise SSH Client\BvSsh.exe" -glclstgs=Proxy
