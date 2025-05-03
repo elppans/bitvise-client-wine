@@ -1,0 +1,28 @@
+# Instalando wine-mono
+
+sudo pacman --needed -Syyu wine-mono gnutls lib32-gnutls
+
+# Instalando o wine e wine-mono em um "conteiner"
+
+mkdir -p "$HOME/.wine/wine_bin/etc/pacman.d/gnupg"
+mkdir -p "$HOME/.wine/wine_bin/var/lib/pacman"
+mkdir -p "$HOME/.wine/wine_bin/var/cache/pacman/pkg"
+mkdir -p "$HOME/.wine/wine_bin/usr/share/pacman/keyrings"
+
+cp -a /etc/pacman.conf "$HOME/.wine/wine_bin/etc"
+cp -a /etc/pacman.d/mirrorlist "$HOME/.wine/wine_bin/etc/pacman.d"
+# cp -a /etc/pacman.d/gnupg "$HOME/.wine/wine_bin/etc/pacman.d/"
+
+sed -i 's/^SigLevel = Required DatabaseOptional/SigLevel = Never/g' "$HOME/.wine/wine_bin/etc/pacman.conf"
+
+# sudo pacman-key --gpgdir "$HOME/.wine/wine_bin/etc/pacman.d/gnupg" --init
+# sudo pacman-key --gpgdir "$HOME/.wine/wine_bin/etc/pacman.d/gnupg" --populate archlinux manjaro
+# sudo pacman --sysroot "$HOME/.wine/wine_bin" -S archlinux-keyring manjaro-keyring
+
+sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu wine-mono --overwrite \*
+sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu gnutls lib32-gnutls --overwrite \*
+
+# Testando Wine no "conteiner"
+
+sudo chroot "$HOME/.wine/wine_bin" wine --version
+
