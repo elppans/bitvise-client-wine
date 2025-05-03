@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -Syu --needed --noconfirm wine-mono gnutls lib32-gnutls
+sudo pacman -Syu --needed --noconfirm wine-mono winetricks gnutls lib32-gnutls util-linux samba sed grep
 
 export DIRGET="$HOME/.wine/bitvise"
 export WINEPREFIX="$HOME/.wine/wbvsshclient"
