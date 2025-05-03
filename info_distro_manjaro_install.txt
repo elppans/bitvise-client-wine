@@ -1,6 +1,13 @@
 # Instalando wine-mono
 
-sudo pacman --needed -Syyu wine-mono gnutls lib32-gnutls
+# gnutls lib32-gnutls = Para acesso a Zone Identifier (ADS - Alternate Data Streams)
+# samba = ntlm_auth para autenticação NTLM.
+# sed = Para Winetricks
+# grep = Para Winetricks
+# util-linux = Para taskset, Winetricks
+
+sudo pacman --needed -Syyu wine-mono winetricks gnutls lib32-gnutls
+sudo pacman --needed -Syyu util-linux samba sed grep
 
 # Instalando o wine e wine-mono em um "conteiner"
 
@@ -21,8 +28,12 @@ sed -i 's/^SigLevel = Required DatabaseOptional/SigLevel = Never/g' "$HOME/.wine
 
 sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu wine-mono --overwrite \*
 sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu gnutls lib32-gnutls --overwrite \*
+sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu samba --overwrite \*
+sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu winetricks --overwrite \*
+sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu sed grep --overwrite \*
+sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu util-linux --overwrite \*
 
-# Testando Wine no "conteiner"
+# Testando Wine
 
 sudo chroot "$HOME/.wine/wine_bin" wine --version
 
