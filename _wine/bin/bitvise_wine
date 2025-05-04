@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cmd="$1"
+
+# Definir ambiente Wine personalizado
+export PATH="$HOME/.wine/wine_bin/usr/bin"
+export LD_LIBRARY_PATH="$HOME/.wine/wine_bin/usr/lib:$HOME/.wine/wine_bin/usr/lib32:$HOME/.wine/wine_bin/usr/lib64"
+export WINEPREFIX="$HOME/.wine/wbvsshclient"
+# export WINEDLLOVERRIDES=
+# export WINEDEBUG=
+
+"$cmd" "${@:2}"
+

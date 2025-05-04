@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Bitvise SSH Client
+Exec=bitvise_ssh_client
+Type=Application
+StartupNotify=true
+Comment=Bitvise SSH Client - a general-purpose SSH client: supports tunneling (manual and via integrated proxy), SFTP file transfer, bridging of FTP clients to SFTP, remote console access and remote administration for Bitvise SSH Server
+Path=/home/manjaro/.wine/wbvsshclient/dosdevices/c:/Program Files (x86)/Bitvise SSH Client
+#Icon=2B7F_BvSsh.0
+Icon=/home/manjaro/Downloads/BvSsh/.rsrc/ICON/0.ico
+StartupWMClass=bvssh.exe

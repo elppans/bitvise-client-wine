@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Definir ambiente Wine personalizado
+export PATH="$HOME/.wine/wine_bin/usr/bin"
+export LD_LIBRARY_PATH="$HOME/.wine/wine_bin/usr/lib:$HOME/.wine/wine_bin/usr/lib32:$HOME/.wine/wine_bin/usr/lib64"
+export WINEPREFIX="$HOME/.wine/wbvsshclient"
+#export WINEDLLOVERRIDES="libgnutls=$HOME/.wine/wine_bin/usr/lib32/libgnutls.so"
+export WINEDLLOVERRIDES="libgnutls=n"
+export WINEDEBUG=fixme-all
+
+# Executar o Bitvise SSH Client Host Key Manager no ambiente Wine customizado
+exec wine "C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\Bitvise\\ SSH\\ Client\\\\Host\\ Key\\ Manager.lnk"
+

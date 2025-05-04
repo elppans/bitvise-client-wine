@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Host Key Manager
+Exec=bitvise_host_key_manager
+Type=Application
+StartupNotify=true
+Comment=Bitvise Global Host Key Management - manage the list of SSH server host keys you trust
+Path=/home/manjaro/.wine/wbvsshclient/dosdevices/c:/Program Files (x86)/Bitvise SSH Client
+Icon=/home/manjaro/Downloads/BvSsh/.rsrc/ICON/3.ico
+StartupWMClass=bvssh.exe

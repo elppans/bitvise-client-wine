@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Proxy Settings
+Exec=bitvise_proxy_settings
+Type=Application
+StartupNotify=true
+Comment=Bitvise Global Proxy Settings - manage your SOCKS or HTTP CONNECT proxy settings for outgoing SSH connections
+Path=/home/manjaro/.wine/wbvsshclient/dosdevices/c:/Program Files (x86)/Bitvise SSH Client
+Icon=/home/manjaro/Downloads/BvSsh/.rsrc/ICON/3.ico
+StartupWMClass=bvssh.exe

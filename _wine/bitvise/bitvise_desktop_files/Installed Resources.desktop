@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Installed Resources
+Exec=bitvise_installed_resources
+Type=Application
+StartupNotify=true
+Comment=Resources included in Bitvise SSH Client 9.44
+Path=/home/manjaro/.wine/wbvsshclient/dosdevices/c:/Program Files (x86)/Bitvise SSH Client
+StartupWMClass=bscinstalledresources.htm

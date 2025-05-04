@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Client Key Manager
+Exec=bitvise_client_key_manager
+Type=Application
+StartupNotify=true
+Comment=Bitvise Global Client Key Management - manage your SSH user authentication keypairs
+Path=/home/manjaro/.wine/wbvsshclient/dosdevices/c:/Program Files (x86)/Bitvise SSH Client
+Icon=/home/manjaro/Downloads/BvSsh/.rsrc/ICON/4.ico
+StartupWMClass=bvssh.exe

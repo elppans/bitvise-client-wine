@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Definir ambiente Wine personalizado
+export PATH="$HOME/.wine/wine_bin/usr/bin"
+export LD_LIBRARY_PATH="$HOME/.wine/wine_bin/usr/lib:$HOME/.wine/wine_bin/usr/lib32:$HOME/.wine/wine_bin/usr/lib64"
+export WINEPREFIX="$HOME/.wine/wbvsshclient"
+#export WINEDLLOVERRIDES="libgnutls=$HOME/.wine/wine_bin/usr/lib32/libgnutls.so"
+#export WINEDLLOVERRIDES="libgnutls=n,ntlm_auth=n,ws2_32=n,bcrypt=n"
+export WINEDLLOVERRIDES="vulkan=n,wineusb=d,ws2_32=b,ntlm_auth=b,libgnutls=b,bcrypt=n,msasn1=n,riched20=n,CiCpFips32=n"
+#export WINEDEBUG=fixme-all,err+all,warn+all,+ntdll
+#export WINEDEBUG=fixme-all,+crypto,+ntdll
+#export WINEDEBUG=fixme-all,+winsock,+ntdll
+#export WINEDEBUG=fixme-all,+winsock
+#export WINEDEBUG=fixme-all
+
+# Executar o Bitvise SSH Client no ambiente Wine customizado
+export BVSSH_NOREGISTRY=1
+#exec wine "C:\\users\\Public\\Desktop\\Bitvise SSH Client.lnk"
+#exec wine "C:\\Program Files (x86)\\Bitvise SSH Client\\BvSsh.exe" -hide=hostKey -noRegistry=y
+exec wine "C:\\Program Files (x86)\\Bitvise SSH Client\\BvSsh.exe"
+
+# Testar resolução de nomes:
+# wine cmd /c ping aws-zanthus-web.bluesoft.com.br
+# wine cmd /c ping google.com
+
+# Verifique se o Wine pode usar OpenSSL diretamente
+# wine cmd /c openssl ecparam -list_curves
+
+#Verificar caminho do OpenSSL dentro do Wine Rode:
+# wine cmd /c echo %PATH%
+
+
+
