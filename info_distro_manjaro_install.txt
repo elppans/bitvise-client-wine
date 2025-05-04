@@ -6,7 +6,9 @@
 # grep = Para Winetricks
 # util-linux = Para taskset, Winetricks
 
-sudo pacman --needed -Syyu wine-mono winetricks gnutls lib32-gnutls
+# winetricks crypt32 = O algoritmo de ECDH não pôde ser inicializado.
+
+sudo pacman --needed -Syyu wine-mono wine-gecko winetricks gnutls lib32-gnutls
 sudo pacman --needed -Syyu util-linux samba sed grep
 
 # Instalando o wine e wine-mono em um "conteiner"
@@ -27,6 +29,7 @@ sed -i 's/^SigLevel = Required DatabaseOptional/SigLevel = Never/g' "$HOME/.wine
 # sudo pacman --sysroot "$HOME/.wine/wine_bin" -S archlinux-keyring manjaro-keyring
 
 sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu wine-mono --overwrite \*
+sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu wine-gecko --overwrite \*
 sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu gnutls lib32-gnutls --overwrite \*
 sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu samba --overwrite \*
 sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu winetricks --overwrite \*
@@ -37,3 +40,5 @@ sudo pacman --sysroot "$HOME/.wine/wine_bin" -Syyu util-linux --overwrite \*
 
 sudo chroot "$HOME/.wine/wine_bin" wine --version
 
+# Removendo pacotes baixados
+sudo pacman --sysroot "$HOME/.wine/wine_bin" -Scc
