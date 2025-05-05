@@ -7,6 +7,7 @@ echo -e 'deb http://cz.archive.ubuntu.com/ubuntu jammy-updates main' | sudo tee 
 sudo apt update
 sudo apt install wine winetricks wine32
 sudo sed -i 's/^/# /' /etc/apt/sources.list.d/cz.archive.ubuntu.list
+sudo apt update
 
 export DIRGET="$HOME/.wine/bitvise"
 export WINEPREFIX="$HOME/.wine/wbvsshclient"
